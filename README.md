@@ -18,10 +18,10 @@ Request :
 ```json
 {
   "id": "string, unique",
-  "name": "string",
   "username": "string",
   "password": "hash(string)",
-  "email": "string"
+  "email": "string",
+  "role": "string"
 }
 ```
 
@@ -33,10 +33,10 @@ Response :
   "status": "string",
   "data": {
     "id": "string, unique",
-    "name": "string",
     "username": "string",
     "password": "hash(string)",
-    "email": "string"
+    "email": "string",
+    "role": "string"
   }
 }
 ```
@@ -58,10 +58,10 @@ Response :
   "status": "string",
   "data": {
     "id": "string, unique",
-    "name": "string",
     "username": "string",
     "password": "hash(string)",
-    "email": "string"
+    "email": "string",
+    "role": "string"
   }
 }
 ```
@@ -80,9 +80,10 @@ Request :
 ```json
 {
   "name": "string",
-  "username": "string",
+
   "password": "hash(string)",
-  "email": "string"
+  "email": "string",
+  "role": "string"
 }
 ```
 
@@ -94,10 +95,10 @@ Response :
   "status": "string",
   "data": {
     "id": "string, unique",
-    "name": "string",
     "username": "string",
     "password": "hash(string)",
-    "email": "string"
+    "email": "string",
+    "role": "string"
   }
 }
 ```
@@ -123,17 +124,17 @@ Response :
   "data": [
     {
       "id": "string, unique",
-      "name": "string",
       "username": "string",
       "password": "hash(string)",
-      "email": "string"
+      "email": "string",
+      "role": "string"
     },
     {
       "id": "string, unique",
-      "name": "string",
       "username": "string",
       "password": "hash(string)",
-      "email": "string"
+      "email": "string",
+      "role": "string"
     }
   ]
 }

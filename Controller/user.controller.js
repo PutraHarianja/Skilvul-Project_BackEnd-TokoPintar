@@ -11,10 +11,10 @@ class UserController {
                     })
                 } else {
                     const newUser = new UserModel({
-                        username = req.body.username,
-                        password = req.body.password,
-                        email = req.body.email,
-                        role = req.body.role,
+                        username : req.body.username,
+                        password : req.body.password,
+                        email : req.body.email,
+                        role : req.body.role,
                     });
 
                     newUser.save()
@@ -30,7 +30,7 @@ class UserController {
     }
 
     static async getUserbyId(req, res) {
-        UserModel.findById({ _id: req.params.id }, (error, result) => {
+        UserModel.findById({ _id: req.params.id_user }, (error, result) => {
             if (error) {
                 return res.send({
                     message: 'no user found'
@@ -45,20 +45,21 @@ class UserController {
     }
 
     static async updateUserbyId(req, res) {
-        UserModel.findByIdAndUpdate({ _id: req.params.id }, {
-            username = req.body.username,
-            password = req.body.password,
-            email = req.body.email,
-            role = req.body.role,
+        UserModel.findByIdAndUpdate({ _id: req.params.id_user }, {
+            username : req.body.username,
+            password : req.body.password,
+            email : req.body.email,
+            role : req.body.role,
         }, (error, result) => {
             if(error){
+                console.log(error)
                 return res.send({
                     message: 'no user found, update action failed'
                 })
             } else {
                 res.status(200).send({
                     message: 'update data user success',
-                    data: result
+                    data: req.body
                 })
             }
         })
@@ -74,14 +75,14 @@ class UserController {
     }
 
     static async deleteUserbyId(req, res) {
-        UserModel.deleteOne({ _id: req.params.id }, (error, result) => {
+        UserModel.deleteOne({ _id: req.params.id_user }, (error, result) => {
             if(error) {
                 res.status(400).send({
                     message : 'no id found, delete action failed'
                 })
             }else {
                 res.status(200).send({
-                    message: `delete data ${_id} successfully`
+                    message: `delete data ${req.params.id_user} successfully`
                 })
             }
         })

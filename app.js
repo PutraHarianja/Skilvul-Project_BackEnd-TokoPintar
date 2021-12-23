@@ -13,7 +13,7 @@ async function main() {
         await db
 
         const app = express()
-        app.unsubscribe(express.json())
+        app.use(express.json())
         app.use(router)
 
         app.listen(port, () => {

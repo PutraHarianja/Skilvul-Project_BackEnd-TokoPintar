@@ -18,10 +18,11 @@ Request :
 ```json
 {
   "id": "string, unique",
-  "name": "string",
   "username": "string",
   "password": "hash(string)",
-  "email": "string"
+  "email": "string",
+  "role": "string",
+  "date": "Date"
 }
 ```
 
@@ -33,10 +34,11 @@ Response :
   "status": "string",
   "data": {
     "id": "string, unique",
-    "name": "string",
     "username": "string",
     "password": "hash(string)",
-    "email": "string"
+    "email": "string",
+    "role": "string",
+    "date": "Date"
   }
 }
 ```
@@ -58,10 +60,11 @@ Response :
   "status": "string",
   "data": {
     "id": "string, unique",
-    "name": "string",
     "username": "string",
     "password": "hash(string)",
-    "email": "string"
+    "email": "string",
+    "role": "string",
+    "date": "Date"
   }
 }
 ```
@@ -80,9 +83,10 @@ Request :
 ```json
 {
   "name": "string",
-  "username": "string",
   "password": "hash(string)",
-  "email": "string"
+  "email": "string",
+  "role": "string",
+  "date": "Date"
 }
 ```
 
@@ -94,10 +98,11 @@ Response :
   "status": "string",
   "data": {
     "id": "string, unique",
-    "name": "string",
     "username": "string",
     "password": "hash(string)",
-    "email": "string"
+    "email": "string",
+    "role": "string",
+    "date": "Date"
   }
 }
 ```
@@ -123,17 +128,19 @@ Response :
   "data": [
     {
       "id": "string, unique",
-      "name": "string",
       "username": "string",
       "password": "hash(string)",
-      "email": "string"
+      "email": "string",
+      "role": "string",
+      "date": "Date"
     },
     {
       "id": "string, unique",
-      "name": "string",
       "username": "string",
       "password": "hash(string)",
-      "email": "string"
+      "email": "string",
+      "role": "string",
+      "date": "Date"
     }
   ]
 }
@@ -203,9 +210,7 @@ Response :
     "genre": "string",
     "quantity": "integer",
     "url": "string",
-    "deskripsi": "string",
-    "createdAt": "date",
-    "updatedAt": "date"
+    "deskripsi": "string"
   }
 }
 ```
@@ -236,9 +241,7 @@ Response :
     "genre": "string",
     "quantity": "integer",
     "url": "string",
-    "deskripsi": "string",
-    "createdAt": "date",
-    "updatedAt": "date"
+    "deskripsi": "string"
   }
 }
 ```
@@ -286,9 +289,7 @@ Response :
     "genre": "string",
     "quantity": "integer",
     "url": "string",
-    "deskripsi": "string",
-    "createdAt": "date",
-    "updatedAt": "date"
+    "deskripsi": "string"
   }
 }
 ```
@@ -323,9 +324,7 @@ Response :
       "genre": "string",
       "quantity": "integer",
       "url": "string",
-      "deskripsi": "string",
-      "createdAt": "date",
-      "updatedAt": "date"
+      "deskripsi": "string"
     },
     {
       "id": "string, unique",
@@ -338,9 +337,7 @@ Response :
       "genre": "string",
       "quantity": "integer",
       "url": "string",
-      "deskripsi": "string",
-      "createdAt": "date",
-      "updatedAt": "date"
+      "deskripsi": "string"
     }
   ]
 }

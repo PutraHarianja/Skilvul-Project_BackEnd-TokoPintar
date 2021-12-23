@@ -4,7 +4,7 @@ class UserController {
 
     static async createNewUser(req, res) {
         try {
-            await UserModel.findOne({ username: req.body.name }).then((user) => {
+            await UserModel.findOne({ username: req.body.username }).then((user) => {
                 if (user) {
                     res.status(400).json({
                         message: 'user already exist'

@@ -4,7 +4,7 @@ Api Specification for Toko Pintar consist Books, Users and Orders entity.
 
 # USER
 
-## Create User
+## Register
 
 Request :
 
@@ -35,15 +35,47 @@ Response :
   "data": {
     "id": "string, unique",
     "username": "string",
-    "password": "hash(string)",
-    "email": "string",
     "role": "string",
     "date": "Date"
   }
 }
 ```
 
-## Get User
+## Login
+
+Request :
+
+- Method : POST
+- Endpoint : `/api/users/login`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+- Body :
+
+```json
+{
+  "id": "string, unique",
+  "username": "string",
+  "password": "hash(string)",
+  "email": "string",
+  "role": "string",
+  "date": "Date"
+}
+```
+
+Response :
+
+```json
+{
+  "code": "number",
+  "status": "string",
+  "data": {
+    "access_token": "string"
+  }
+}
+```
+
+## Get User by Id
 
 Request :
 
@@ -99,20 +131,18 @@ Response :
   "data": {
     "id": "string, unique",
     "username": "string",
-    "password": "hash(string)",
-    "email": "string",
     "role": "string",
     "date": "Date"
   }
 }
 ```
 
-## List Users
+## Get Profile
 
 Request :
 
 - Method : GET
-- Endpoint : `/api/users`
+- Endpoint : `/api/users/profile`
 - Header :
   - Accept: application/json
 - Query Param :
@@ -125,24 +155,12 @@ Response :
 {
   "code": "number",
   "status": "string",
-  "data": [
-    {
-      "id": "string, unique",
-      "username": "string",
-      "password": "hash(string)",
-      "email": "string",
-      "role": "string",
-      "date": "Date"
-    },
-    {
-      "id": "string, unique",
-      "username": "string",
-      "password": "hash(string)",
-      "email": "string",
-      "role": "string",
-      "date": "Date"
-    }
-  ]
+  "data": {
+    "id": "string, unique",
+    "username": "string",
+    "role": "string",
+    "date": "Date"
+  }
 }
 ```
 

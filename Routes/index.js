@@ -2,6 +2,7 @@ const express = require('express')
 
 const userRoutes = require('./user')
 const bookRouter = require('./book')
+const orderRouter = require('./order')
 const auth = require('../Middleware/auth')
 
 
@@ -18,5 +19,7 @@ router.get('/ping', (req, res) => {
 router.use("/users", userRoutes)
 
 router.use("/books", auth.login, bookRouter)
+
+router.use("/orders", auth.login, orderRouter)
 
 module.exports = router

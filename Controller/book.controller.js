@@ -79,6 +79,8 @@ class BookController {
     }
 
     static async getAllBooks(req, res) {
+        console.log(req.loggedUser)
+
         BookModel.find({}, (error, result) => {
             if (error)
                 return res.send(error);

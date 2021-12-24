@@ -14,7 +14,9 @@ async function main() {
 
         const app = express()
         app.use(express.json())
+        
         app.use(router)
+
         router.get('/', (req, res) => {
             res.send({ welcome: "Welcome to toko-pintar API"})         
         })
